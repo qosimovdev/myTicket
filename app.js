@@ -22,7 +22,8 @@ sequelize
 
 const customer = require("./routes/customer.routes")
 const customerAddress = require("./routes/customerAddress.routes")
+const customerCard = require("./routes/customerCard.routes")
 
-
-app.use("/api/customerAddress", customerAddress)
+app.use("/api/customer-address", customerAddress)
 app.use("/api/customer", customer)
+app.use("/api/customer-card", customerCard)
