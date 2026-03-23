@@ -1,4 +1,4 @@
-const { Venue, Region, District } = require("../model");
+const { Venue, Region, District, VenuePhoto } = require("../model");
 
 exports.createVenue = async (req, res) => {
     try {
@@ -25,6 +25,10 @@ exports.getAllVenues = async (req, res) => {
             {
                 model: District,
                 as: "district"
+            },
+            {
+                model: VenuePhoto,
+                as: "photos"
             }],
             order: [["id", "DESC"]]
         });
@@ -48,7 +52,12 @@ exports.getOneVenue = async (req, res) => {
             {
                 model: District,
                 as: "district"
-            }],
+            },
+            {
+                model: VenuePhoto,
+                as: "photos"
+            }
+            ],
         });
         if (!venue) {
             return res.status(404).json({

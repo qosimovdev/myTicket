@@ -20,6 +20,9 @@ db.Lang = require("./lang.model")(sequelize, Sequelize.DataTypes)
 db.HumanCategory = require("./humanCategory.model")(sequelize, Sequelize.DataTypes)
 db.District = require("./district.model")(sequelize, Sequelize.DataTypes)
 db.Region = require("./region.model")(sequelize, Sequelize.DataTypes)
+db.VenuePhoto = require("./venuePhoto.model")(sequelize, Sequelize.DataTypes)
+db.Types = require("./types.model")(sequelize, Sequelize.DataTypes)
+db.VenueTypes = require("./venueTypes.model")(sequelize, Sequelize.DataTypes)
 
 Object.keys(db).forEach(modelName => {
     if (db[modelName].associate) {
