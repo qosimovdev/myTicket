@@ -37,7 +37,9 @@ module.exports = (sequelize, DataTypes) => {
         gender: {
             type: DataTypes.ENUM('male', 'female'),
             allowNull: false
-        }
+        },
+    }, {
+        timestamps: true
     });
 
     Customer.prototype.checkPassword = function (password) {

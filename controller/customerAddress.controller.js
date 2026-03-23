@@ -59,7 +59,12 @@ exports.getAllCustomerAddress = async (req, res) => {
             ],
             order: [["createdAt", "DESC"]]
         });
-        return res.json(addresses);
+        if (!addresses) {
+            return res.status(404).json({
+                message: "Address not found"
+            })
+        }
+        return res.status(200).json(addresses);
     } catch (err) {
         console.error("Get all error:", err.message);
         return res.status(500).json({ message: "Server error" });

@@ -44,7 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         info: {
             type: DataTypes.STRING,
             allowNull: true
-        }
+        },
+    }, {
+        timestamps: true
     });
 
     CustomerAddress.associate = (models) => {

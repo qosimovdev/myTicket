@@ -17,6 +17,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+    }, {
+        timestamps: true
     })
     CustomerCart.associate = (models) => {
         CustomerCart.belongsTo(models.Customer, {

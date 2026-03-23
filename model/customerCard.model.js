@@ -42,6 +42,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             defaultValue: true
         },
+    }, {
+        timestamps: true
     })
     CustomerCard.associate = (models) => {
         CustomerCard.belongsTo(models.Customer, {

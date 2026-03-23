@@ -79,7 +79,6 @@ exports.updateCustomer = async (req, res) => {
         const customer = await Customer.findByPk(id);
         if (!customer)
             return res.status(404).json({ message: "Customer topilmadi" });
-
         const { firstName, lastName, phone, password, email, birthDate, gender } = req.body;
         await customer.update({
             firstName, lastName, phone, password, email, birthDate, gender
