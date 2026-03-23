@@ -1,6 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
     const bcrypt = require('bcrypt');
-
     const Customer = sequelize.define("Customer", {
         id: {
             type: DataTypes.INTEGER,
@@ -54,6 +53,20 @@ module.exports = (sequelize, DataTypes) => {
             customer.password = await bcrypt.hash(customer.password, 10);
         }
     });
+    Customer.associate = (models) => {
+        Customer.hasMany(models.CustomerCart, {
+            foreignKey: "customerId",
+            as: "carts"
+        });
+        Customer.hasMany(models.CustomerCard, {
+            foreignKey: "customerId",
+            as: "cards"
+        });
+        Customer.hasMany(models.CustomerAddress, {
+            foreignKey: "customerId",
+            as: "addresses"
+        });
+    };
 
     return Customer;
 };

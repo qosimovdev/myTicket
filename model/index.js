@@ -9,6 +9,7 @@ db.sequelize = sequelize
 db.CustomerAddress = require("./customerAddress.model")(sequelize, Sequelize.DataTypes)
 db.Customer = require("./customer.model")(sequelize, Sequelize.DataTypes)
 db.CustomerCard = require("./customerCard.model")(sequelize, Sequelize.DataTypes)
+db.CustomerCart = require("./customerCart.model")(sequelize, Sequelize.DataTypes)
 
 Object.keys(db).forEach(modelName => {
     if (db[modelName].associate) {

@@ -63,7 +63,7 @@ exports.loginCustomer = async (req, res) => {
 exports.getCustomer = async (req, res) => {
     try {
         const { id } = req.params;
-        const customer = await Customer.findByPk(id);
+        const customer = await Customer.findByPk(id, { include: ["carts", "cards", "addresses"] });
         if (!customer)
             return res.status(404).json({ message: "Customer topilmadi" });
         return res.json(customer);
