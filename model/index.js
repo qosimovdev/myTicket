@@ -23,6 +23,11 @@ db.Region = require("./region.model")(sequelize, Sequelize.DataTypes)
 db.VenuePhoto = require("./venuePhoto.model")(sequelize, Sequelize.DataTypes)
 db.Types = require("./types.model")(sequelize, Sequelize.DataTypes)
 db.VenueTypes = require("./venueTypes.model")(sequelize, Sequelize.DataTypes)
+db.SeatType = require("./seatType.model")(sequelize, Sequelize.DataTypes)
+db.Seat = require("./seat.model")(sequelize, Sequelize.DataTypes)
+db.TicketStatus = require("./ticketStatus.model")(sequelize, Sequelize.DataTypes)
+db.Ticket = require("./ticket.model")(sequelize, Sequelize.DataTypes)
+db.CartItem = require("./cartItem.model")(sequelize, Sequelize.DataTypes)
 
 Object.keys(db).forEach(modelName => {
     if (db[modelName].associate) {
